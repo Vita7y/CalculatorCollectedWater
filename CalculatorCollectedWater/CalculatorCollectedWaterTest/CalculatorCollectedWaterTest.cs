@@ -81,6 +81,23 @@ namespace CalculatorCollectedWaterTest
         }
 
         [Fact]
+        public void Test_Problem_TestCollectionDownUpHills()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] { 5, 1, 4, 1, 3, 1, 2, 1, 2, 1, 3, 1, 4, 1, 5 });
+            Assert.Equal(40, res);
+        }
+
+        [Fact]
+        public void Test_Problem_TestCollectionDownUpHillsShort()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] { 5, 1, 4, 1, 3, 1, 2, 1, 2, 1, 3, 1, 4, 1 });
+            Assert.Equal(24, res);
+        }
+
+
+        [Fact]
         public void Test_Problem_TestCollectionUpHills()
         {
             var calculator = new Problem();
@@ -111,5 +128,22 @@ namespace CalculatorCollectedWaterTest
             var res = calculator.Solve(new[] { 5, 4, 3, 2, 1 });
             Assert.Equal(0, res);
         }
+
+        [Fact]
+        public void Test_Problem_TestCollectionMountain()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] { 1, 2, 3, 4, 5, 4, 3, 2, 1 });
+            Assert.Equal(0, res);
+        }
+
+        [Fact]
+        public void Test_Problem_TestCollectionMountainInverse()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] { 5, 4, 3, 2, 1, 2, 3, 4, 5 });
+            Assert.Equal(16, res);
+        }
+
     }
 }

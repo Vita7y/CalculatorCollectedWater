@@ -4,45 +4,45 @@ using System.Linq;
 
 namespace CalculatorCollectedWater
 {
-    public class Problem: IProblem
+    public class Problem : IProblem
     {
         public int Solve(int[] heigts)
         {
-            if(!CheckHeigts(heigts))
+            if (!CheckHeigts(heigts))
                 return -1;
 
             var hollows = CalcHills(heigts);
             return FillHillsOfWater(hollows, heigts);
         }
 
-        private bool CheckHeigts(int[] heigts)
+        private static bool CheckHeigts(IReadOnlyCollection<int> heigts)
         {
-            if (heigts == null || heigts.Length == 0)
+            if (heigts == null || heigts.Count == 0)
                 return false;
 
             return heigts.All(heigt => heigt > 0 && heigt < 32000);
         }
 
-        private List<Tuple<int, int>> CalcHills(int[] heigts)
+        private static IEnumerable<Tuple<int, int>> CalcHills(IReadOnlyList<int> heigts)
         {
             var hollows = new List<Tuple<int, int>>();
-            for (int i=0; i<heigts.Length-1; i++)
+            for (var i = 0; i < heigts.Count - 1; i++)
             {
-                int left = heigts[i];
-                int tmp = heigts[i+1];
-                if(tmp >= left)
+                var left = heigts[i];
+                var tmpRight = heigts[i + 1];
+                if (tmpRight >= left)
                     continue;
 
                 var foundEndOfHill = false;
-                Tuple<int, int> tmpEndOfHill = new Tuple<int, int>(0,0);
-                for (int j = i; j < heigts.Length; j++)
+                var tmpEndOfHill = new Tuple<int, int>(0, 0);
+                for (var j = i + 1; j < heigts.Count; j++)
                 {
                     var right = heigts[j];
                     if (right >= left)
                     {
                         foundEndOfHill = true;
                         hollows.Add(new Tuple<int, int>(i, j));
-                        i = j;
+                        i = j - 1;
                         break;
                     }
 
@@ -53,28 +53,29 @@ namespace CalculatorCollectedWater
                 if (!foundEndOfHill && tmpEndOfHill.Item1 != 0)
                 {
                     hollows.Add(new Tuple<int, int>(i, tmpEndOfHill.Item1));
-                    i = tmpEndOfHill.Item1;
+                    i = tmpEndOfHill.Item1 - 1;
                 }
             }
 
             return hollows;
         }
 
-        private int FillHillsOfWater(List<Tuple<int, int>> hollows, int[] heigts)
+        private static int FillHillsOfWater(IEnumerable<Tuple<int, int>> hollows, IReadOnlyList<int> heigts)
         {
             var result = 0;
             foreach (var hollow in hollows)
             {
                 var left = heigts[hollow.Item1];
                 var right = heigts[hollow.Item2];
-                var min = left > right ? right : left;
-                for (int i = hollow.Item1; i < hollow.Item2; i++)
+                var minSide = left > right ? right : left;
+                for (var i = hollow.Item1; i < hollow.Item2; i++)
                 {
-                    var delta = min - heigts[i];
+                    var delta = minSide - heigts[i];
                     if (delta > 0)
                         result += delta;
                 }
             }
+
             return result;
         }
     }
