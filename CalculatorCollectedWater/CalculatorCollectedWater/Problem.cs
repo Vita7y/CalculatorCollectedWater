@@ -16,16 +16,16 @@ namespace CalculatorCollectedWater
     {
         public int Solve(int[] heigts)
         {
-            if (!CheckHeigts(heigts))
+            if (!CheckInputData(heigts))
                 return -1;
 
             var hollows = CalcHills(heigts);
             return FillHillsWithWater(hollows, heigts);
         }
 
-        private static bool CheckHeigts(IReadOnlyCollection<int> heigts)
+        private static bool CheckInputData(IReadOnlyCollection<int> heigts)
         {
-            if (heigts == null || heigts.Count == 0)
+            if (heigts == null || heigts.Count == 0 || heigts.Count > 32000)
                 return false;
 
             return heigts.All(heigt => heigt > 0 && heigt < 32000);

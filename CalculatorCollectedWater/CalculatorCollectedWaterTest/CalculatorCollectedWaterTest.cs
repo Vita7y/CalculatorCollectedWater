@@ -26,7 +26,13 @@ namespace CalculatorCollectedWaterTest
             var calculator = new Problem();
             var res = calculator.Solve(new []{1,0,1});
             Assert.Equal(-1, res);
+
             res = calculator.Solve(new[] { 1, 32001, 1, 2 });
+            Assert.Equal(-1, res);
+
+            var arr = new int[32001];
+            arr[0] = 1;
+            res = calculator.Solve(arr);
             Assert.Equal(-1, res);
         }
 
