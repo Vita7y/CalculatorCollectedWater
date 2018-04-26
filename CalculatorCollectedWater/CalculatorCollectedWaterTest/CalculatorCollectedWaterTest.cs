@@ -24,7 +24,7 @@ namespace CalculatorCollectedWaterTest
         public void Test_Problem_SomeValuesOutOfBorder()
         {
             var calculator = new Problem();
-            var res = calculator.Solve(new []{1,0,1});
+            var res = calculator.Solve(new []{1,0, -1, 1});
             Assert.Equal(-1, res);
 
             res = calculator.Solve(new[] { 1, 32001, 1, 2 });
@@ -181,5 +181,14 @@ namespace CalculatorCollectedWaterTest
             var res = calculator.Solve(new[] { 3,5,7,3,4,2,3,4,3,1,4,5,2,1 });
             Assert.Equal(16, res);
         }
+
+        [Fact]
+        public void Test_Problem_TestFromManagerAnswer()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] { 1,2,0,2 });
+            Assert.Equal(2, res);
+        }
+
     }
 }

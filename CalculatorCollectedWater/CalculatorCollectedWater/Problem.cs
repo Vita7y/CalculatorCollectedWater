@@ -4,14 +4,6 @@ using System.Linq;
 
 namespace CalculatorCollectedWater
 {
-    /// <summary>
-    /// I have technical questions:
-    /// 1. In task wrote: 'Height is between 0 and 32000' so 0 and 32000 enter in correct range, and what I need to do if I get -1 or 32001?
-    /// 2. If I have in example heights: 1,2,0,2 what will be correct values of collected water 0 or 2?
-    /// 
-    /// I didn`t get answers to my questions so I used assumption:
-    ///     If I get values in collection less then 1 and greater than 32000 I returned [-1] code
-    /// </summary>
     public class Problem
     {
         public int Solve(int[] heigts)
@@ -28,7 +20,7 @@ namespace CalculatorCollectedWater
             if (heigts == null || heigts.Count == 0 || heigts.Count > 32000)
                 return false;
 
-            return heigts.All(heigt => heigt > 0 && heigt < 32000);
+            return heigts.All(heigt => heigt >= 0 && heigt <= 32000);
         }
 
         private static IEnumerable<Tuple<int, int>> CalcHills(IReadOnlyList<int> heigts)
