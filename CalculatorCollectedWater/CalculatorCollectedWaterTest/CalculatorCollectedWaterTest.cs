@@ -145,5 +145,35 @@ namespace CalculatorCollectedWaterTest
             Assert.Equal(16, res);
         }
 
+        [Fact]
+        public void Test_Problem_TestDifferentHillsLivel()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] {6, 5, 4, 6, 6, 5, 4, 3, 5, 1, 2, 3, 1});
+            Assert.Equal(9, res);
+        }
+        [Fact]
+        public void Test_Problem_TestDifferentHillsLivelInverse()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] { 1,3,2,1,5,3,4,5,6,6,4,5,6 });
+            Assert.Equal(9, res);
+        }
+
+        [Fact]
+        public void Test_Problem_Test2()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] {1, 2, 5, 4, 1, 3, 4, 3, 2, 4, 3, 7, 5, 3});
+            Assert.Equal(16, res);
+        }
+
+        [Fact]
+        public void Test_Problem_Test2Inverse()
+        {
+            var calculator = new Problem();
+            var res = calculator.Solve(new[] { 3,5,7,3,4,2,3,4,3,1,4,5,2,1 });
+            Assert.Equal(16, res);
+        }
     }
 }

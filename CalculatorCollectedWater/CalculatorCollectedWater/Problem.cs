@@ -20,7 +20,7 @@ namespace CalculatorCollectedWater
                 return -1;
 
             var hollows = CalcHills(heigts);
-            return FillHillsOfWater(hollows, heigts);
+            return FillHillsWithWater(hollows, heigts);
         }
 
         private static bool CheckHeigts(IReadOnlyCollection<int> heigts)
@@ -68,7 +68,7 @@ namespace CalculatorCollectedWater
             return hollows;
         }
 
-        private static int FillHillsOfWater(IEnumerable<Tuple<int, int>> hollows, IReadOnlyList<int> heigts)
+        private static int FillHillsWithWater(IEnumerable<Tuple<int, int>> hollows, IReadOnlyList<int> heigts)
         {
             var result = 0;
             foreach (var hollow in hollows)
