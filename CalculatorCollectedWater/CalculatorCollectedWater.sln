@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorCollectedWaterTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkWaterCalculator", "BenchmarkWaterCalculator\BenchmarkWaterCalculator.csproj", "{E4DCC8FC-0261-4FEB-8952-C44B74D985A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue", "Interview\Queue.csproj", "{65E1BED5-07CE-4E40-AF4C-582B1875CABD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestQueue", "UnitTestInterview\UnitTestQueue.csproj", "{F737BDD5-0F82-46FA-B9A2-96DE01D8EB1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E4DCC8FC-0261-4FEB-8952-C44B74D985A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4DCC8FC-0261-4FEB-8952-C44B74D985A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4DCC8FC-0261-4FEB-8952-C44B74D985A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E1BED5-07CE-4E40-AF4C-582B1875CABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E1BED5-07CE-4E40-AF4C-582B1875CABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E1BED5-07CE-4E40-AF4C-582B1875CABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E1BED5-07CE-4E40-AF4C-582B1875CABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F737BDD5-0F82-46FA-B9A2-96DE01D8EB1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F737BDD5-0F82-46FA-B9A2-96DE01D8EB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F737BDD5-0F82-46FA-B9A2-96DE01D8EB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F737BDD5-0F82-46FA-B9A2-96DE01D8EB1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
